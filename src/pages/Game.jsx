@@ -1,13 +1,49 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { validateWord } from "../services/wordService";
 import { isWordUsed, isChainable } from "../utils/gameValidations";
+import Timer from "../components/Timer";
+import ScoreBoard from "../components/ScoreBoard";
+import WordChain from "../components/WordChain";
+import WordInput from "../components/WordInput";
+import GameOver from "../components/GameOver";
 
 export default function Game() {
   const [chain, setChain] = useState([]);
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
-
+  const [timeLeft, setTimeLeft] = useState(15);
+  const [prevChainLength, setPrevChainLength] = useState(chain.length);
+  const [status, setStatus] = useState("playing");
   const score = chain.reduce((acc, word) => acc + word.length, 0);
+
+  const resetGame = () => {
+  setChain([]);
+  setInput("");
+  setError("");
+  setTimeLeft(15);
+  setPrevChainLength(0);
+  setStatus("playing");
+};
+
+  if (chain.length !== prevChainLength) {
+    setPrevChainLength(chain.length);
+    setTimeLeft(15);
+  }
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft((prevTime) => {
+        if (prevTime <= 1) {
+          clearInterval(timer);
+          setStatus("GameOver");
+          return 0;
+        }
+        return prevTime - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [chain.length]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,7 +55,7 @@ export default function Game() {
       return;
     }
     if (!isChainable(word, chain)) {
-      setError("La palabra no puede ser encadenada");
+      setError("La palabra no respeta la regla de encadenamiento.");
       return;
     }
 
@@ -34,20 +70,28 @@ export default function Game() {
     setError("");
   };
 
+if (status === "GameOver") {
+  return (
+    <GameOver
+      wordCount={chain.length}
+      score={score}
+      onPlayAgain={resetGame}
+    />
+  );
+}
+
   return (
     <div>
       <h1>Palabras Encadenadas</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Ingresá una palabra"
-        />
-        <button type="submit">Enviar</button>
-      </form>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      <p>Cadena: {chain.join(" → ")}</p>
-      <p>Puntaje: {score}</p>
+      <Timer timeLeft={timeLeft} />
+      <WordInput
+        input={input}
+        onInputChange={setInput}
+        onSubmit={handleSubmit}
+        error={error}
+      />
+      <WordChain chain={chain} />
+      <ScoreBoard score={score} />
     </div>
   );
 }
