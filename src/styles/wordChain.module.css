@@ -1,0 +1,30 @@
+.eyebrow {
+  color: var(--green);
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 34px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  font-family: var(--font-crt);
+  font-size: 30px;
+  padding: 5px 12px;
+  background: #000;
+  border: 2px solid var(--text-dim);
+  color: var(--text-dim);
+}
+
+.chipLatest {
+  color: #000;
+  background: var(--green);
+  border-color: var(--green);
+  font-weight: 600;
+  animation: chipIn 0.2s ease;
+}

@@ -1,0 +1,35 @@
+.wrap {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 36px 24px;
+}
+
+.title {
+  font-family: var(--font-pixel);
+  font-size: 35px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin: 0 0 14px;
+}
+
+
+.stat {
+  color: var(--text-hi);
+  font-family: var(--font-crt);
+  font-size: 30px;
+  margin: 4px 0;
+}
+
+.divider {
+  border: none;
+  border-top: 20px dashed rgb(218, 19, 218);
+  margin: 20px 0;
+}
+
+.playAgain {
+  margin: 5px auto 0;
+  display: block;
+}
+
