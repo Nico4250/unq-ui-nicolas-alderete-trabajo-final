@@ -1,15 +1,23 @@
+import styles from "../styles/wordInput.module.css";
+
 export default function WordInput({ input, onInputChange, onSubmit, error }) {
   return (
-    <div>
-      <form onSubmit={onSubmit}>
+    <div className="panel">
+      <p className={`eyebrow ${styles.eyebrow}`}>Escriba la siguiente palabra</p>
+      <form className={styles.row} onSubmit={onSubmit}>
         <input
+          className={`${styles.input} ${error ? styles.inputInvalid : ""}`}
           value={input}
           onChange={(e) => onInputChange(e.target.value)}
-          placeholder="Ingresá una palabra"
+          placeholder="ej: elefante"
         />
-        <button type="submit">Enviar</button>
+        <button type="submit" className={`actionBtn ${styles.submitBtn}`}>
+          Enviar
+        </button>
       </form>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      <p className={`${styles.errorMsg} ${error ? styles.errorMsgShow : ""}`}>
+        {error || ""}
+      </p>
     </div>
   );
 }

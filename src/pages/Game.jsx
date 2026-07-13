@@ -6,6 +6,7 @@ import ScoreBoard from "../components/ScoreBoard";
 import WordChain from "../components/WordChain";
 import WordInput from "../components/WordInput";
 import GameOver from "../components/GameOver";
+import styles from "../styles/game.module.css";
 
 export default function Game() {
   const [chain, setChain] = useState([]);
@@ -17,13 +18,13 @@ export default function Game() {
   const score = chain.reduce((acc, word) => acc + word.length, 0);
 
   const resetGame = () => {
-  setChain([]);
-  setInput("");
-  setError("");
-  setTimeLeft(15);
-  setPrevChainLength(0);
-  setStatus("playing");
-};
+    setChain([]);
+    setInput("");
+    setError("");
+    setTimeLeft(15);
+    setPrevChainLength(0);
+    setStatus("playing");
+  };
 
   if (chain.length !== prevChainLength) {
     setPrevChainLength(chain.length);
@@ -70,19 +71,19 @@ export default function Game() {
     setError("");
   };
 
-if (status === "GameOver") {
-  return (
-    <GameOver
-      wordCount={chain.length}
-      score={score}
-      onPlayAgain={resetGame}
-    />
-  );
-}
+  if (status === "GameOver") {
+    return (
+      <GameOver
+        wordCount={chain.length}
+        score={score}
+        onPlayAgain={resetGame}
+      />
+    );
+  }
 
   return (
-    <div>
-      <h1>Palabras Encadenadas</h1>
+    <div className={styles.game}>
+      <h1 className={styles.title}>Palabras Encadenadas</h1>
       <Timer timeLeft={timeLeft} />
       <WordInput
         input={input}
