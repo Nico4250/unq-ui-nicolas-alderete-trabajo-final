@@ -1,0 +1,67 @@
+.eyebrow {
+  color: var(--pink);
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  height: 70px;
+  background: #000;
+  border: 3px solid var(--text-dim);
+  color: var(--text-hi);
+  font-family: var(--font-crt);
+  font-size: 26px;
+  padding: 0 16px;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.input::placeholder {
+  color: var(--text-dim);
+}
+
+.input:focus {
+  border-color: var(--text-dim);
+  box-shadow: 0 0 8px var(--text-dim);
+}
+
+.inputInvalid {
+  border-color: var(--red);
+  box-shadow: 0 0 8px var(--red);
+}
+
+.submitBtn {
+  height: 62px;
+  padding: 0 22px;
+  font-size: 13px;
+}
+
+.errorMsg {
+  min-height: 18px;
+  font-size: 25px;
+  color: var(--red);
+  margin-top: 8px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  font-family: var(--font-crt);
+}
+
+.errorMsgShow {
+  opacity: 1;
+}
+
+@media (max-width: 380px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .submitBtn {
+    width: 100%;
+  }
+}
