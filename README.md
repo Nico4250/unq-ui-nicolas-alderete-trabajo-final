@@ -9,8 +9,8 @@ Alderete Nicolás - Grupo 01
 
 ## REQUISITOS:
 
-Tener NodeJS instalado
-Poseer conexión a internet (Nuestra API valida desde la web)
+1)Tener NodeJS instalado
+2)Poseer conexión a internet (Nuestra API valida desde la web)
 
 ## INSTALACIÓN:
 
