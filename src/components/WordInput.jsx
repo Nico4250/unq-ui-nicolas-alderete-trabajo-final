@@ -1,6 +1,6 @@
 import styles from "../styles/wordInput.module.css";
 
-export default function WordInput({ input, onInputChange, onSubmit, error }) {
+export default function WordInput({ input, onInputChange, onSubmit, lastLetter, error }) {
   return (
     <div className="panel">
       <p className={`eyebrow ${styles.eyebrow}`}>Escriba la siguiente palabra</p>
@@ -9,7 +9,7 @@ export default function WordInput({ input, onInputChange, onSubmit, error }) {
           className={`${styles.input} ${error ? styles.inputInvalid : ""}`}
           value={input}
           onChange={(e) => onInputChange(e.target.value)}
-          placeholder="ej: elefante"
+           placeholder={lastLetter ? `${lastLetter}...` : "ej: elefante"}
         />
         <button type="submit" className={`actionBtn ${styles.submitBtn}`}>
           Enviar

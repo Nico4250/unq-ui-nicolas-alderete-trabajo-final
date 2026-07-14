@@ -12,7 +12,7 @@ export default function EnterName({ onSubmit }) {
 
   return (
     <form className={styles.wrap} onSubmit={handleSubmit}>
-      <p className={styles.label}>Ingresa tu nombre (3 caracteres)</p>
+      <p className={styles.label}>Ingresa tu nombre</p>
       <div className={styles.row}>
         <input
           className={styles.input}

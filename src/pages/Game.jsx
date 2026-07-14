@@ -13,9 +13,14 @@ export default function Game() {
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
   const [timeLeft, setTimeLeft] = useState(15);
+    const [isValidating, setIsValidating] = useState(false); 
   const [prevChainLength, setPrevChainLength] = useState(chain.length);
   const [status, setStatus] = useState("playing");
   const score = chain.reduce((acc, word) => acc + word.length, 0);
+
+  const lastLetter = chain.length > 0
+  ? chain[chain.length - 1].slice(-1).toUpperCase()
+  : "";
 
   const resetGame = () => {
     setChain([]);
@@ -24,6 +29,7 @@ export default function Game() {
     setTimeLeft(15);
     setPrevChainLength(0);
     setStatus("playing");
+    setIsValidating(false); 
   };
 
   if (chain.length !== prevChainLength) {
@@ -35,6 +41,9 @@ export default function Game() {
     const timer = setInterval(() => {
       setTimeLeft((prevTime) => {
         if (prevTime <= 1) {
+           if (isValidating) {
+            return 1; 
+          }
           clearInterval(timer);
           setStatus("GameOver");
           return 0;
@@ -44,12 +53,16 @@ export default function Game() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [chain.length]);
+  }, [chain.length, isValidating]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const word = input.trim().toLowerCase();
-    if (word === "") return;
+
+    if (word === "") {
+      setError("Ingresá una palabra.");
+      return;
+    }
 
     if (isWordUsed(word, chain)) {
       setError("La palabra ya fue utilizada.");
@@ -60,7 +73,9 @@ export default function Game() {
       return;
     }
 
+    setIsValidating(true);
     const exists = await validateWord(word);
+    setIsValidating(false);
     if (!exists) {
       setError("La palabra no existe.");
       return;
@@ -89,6 +104,7 @@ export default function Game() {
         input={input}
         onInputChange={setInput}
         onSubmit={handleSubmit}
+        lastLetter={lastLetter}
         error={error}
       />
       <WordChain chain={chain} />
