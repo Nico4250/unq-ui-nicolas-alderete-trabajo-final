@@ -10,15 +10,17 @@
 .input {
   flex: 1;
   min-width: 0;
-  height: 70px;       
+  height: 70px;
   background: #000;
   border: 3px solid var(--text-dim);
   color: var(--text-hi);
   font-family: var(--font-crt);
-  font-size: 26px;     
-  padding: 0 16px;   
+  font-size: 26px;
+  padding: 0 16px;
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 .input::placeholder {
   color: var(--text-dim);
@@ -29,14 +31,13 @@
   box-shadow: 0 0 8px var(--text-dim);
 }
 
-
 .inputInvalid {
   border-color: var(--red);
   box-shadow: 0 0 8px var(--red);
 }
 
 .submitBtn {
-  height: 62px;   
+  height: 62px;
   padding: 0 22px;
   font-size: 13px;
 }

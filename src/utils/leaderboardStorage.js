@@ -15,4 +15,3 @@ export const saveScore = (name, score) => {
   localStorage.setItem(STORAGE_NAME, JSON.stringify(updated));
   return updated;
 };
-

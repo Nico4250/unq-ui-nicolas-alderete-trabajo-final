@@ -25,7 +25,10 @@ export default function GameOver({ wordCount, score, onPlayAgain }) {
       ) : (
         <>
           <Leaderboard entries={leaderboard} />
-          <button onClick={onPlayAgain} className={`actionBtn ${styles.playAgain}`}>
+          <button
+            onClick={onPlayAgain}
+            className={`actionBtn ${styles.playAgain}`}
+          >
             Jugar de nuevo
           </button>
         </>

@@ -28,7 +28,9 @@
   text-transform: uppercase;
   letter-spacing: 0.2em;
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .input:focus {

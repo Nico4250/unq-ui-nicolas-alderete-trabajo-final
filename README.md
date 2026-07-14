@@ -1,16 +1,36 @@
-# React + Vite
+## CONSTRUCCION DE INTERFACES DE USUARIO - TRABAJO FINAL INTEGRADOR 2026s1
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## PALABRAS ENCADENADAS:
+El juego consiste en formar la mayor cantidad de palabras que se encuentren conectadas por su última letra, tenemos 15 segundos para pensar cada palabra, de lo contrario, perderemos. Sé el que mas puntos obtenga!
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ALUMNO:
+Alderete Nicolás - Grupo 01
 
-## React Compiler
+## REQUISITOS:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Tener NodeJS instalado
+Poseer conexión a internet (Nuestra API valida desde la web)
 
-## Expanding the ESLint configuration
+## INSTALACIÓN:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1) CMD: Clona el repositorio desde el siguiente link: https://github.com/Nico4250/unq-ui-nicolas-alderete-trabajo-final.git
+2) CMD: entra en la carpeta del repositorio: unq-ui-nicolas-alderete-trabajo-final
+3) CMD: instala las dependencias: npm install
+Ya está listo para correr!
+
+## CÓMO JUGAR:
+1) CMD: entra en la carpeta del repositorio: unq-ui-nicolas-alderete-trabajo-final
+2) CMD: npm run dev
+Listo! Debería abrir el juego en: http://localhost:5173, asegurate de que tu pc no esté ocupando la ruta
+
+
+### Pantalla de juego
+![Pantalla de juego, mostrando la cadena de palabras, el tiempo restante y el puntaje](src/assets/game.png)
+
+### Fin de partida
+![Pantalla de fin de partida con el puntaje final y la cantidad de palabras encadenadas](src/assets/gameover.png)
+
+### Leaderboard
+![Tabla de los 10 mejores puntajes con los nombres ingresados](src/assets/leaderboard.png)
+

@@ -9,8 +9,8 @@ export default function Timer({ timeLeft }) {
     timeLeft <= DANGER_THRESHOLD
       ? "danger"
       : timeLeft <= WARNING_THRESHOLD
-      ? "warning"
-      : null;
+        ? "warning"
+        : null;
 
   const barPercent = Math.max(0, Math.min(100, (timeLeft / TOTAL_TIME) * 100));
 
@@ -29,8 +29,8 @@ export default function Timer({ timeLeft }) {
             state === "warning"
               ? styles.barFillWarning
               : state === "danger"
-              ? styles.barFillDanger
-              : ""
+                ? styles.barFillDanger
+                : ""
           }`}
           style={{ width: `${barPercent}%` }}
         />

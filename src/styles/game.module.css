@@ -12,5 +12,7 @@
   text-align: center;
   margin: 30px 0 10px;
   color: var(--pink);
-  text-shadow: 0 0 6px var(--pink), 0 0 18px rgba(255, 20, 147, 0.6);
+  text-shadow:
+    0 0 6px var(--pink),
+    0 0 18px rgba(255, 20, 147, 0.6);
 }

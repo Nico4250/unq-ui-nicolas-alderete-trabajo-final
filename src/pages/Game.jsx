@@ -13,14 +13,13 @@ export default function Game() {
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
   const [timeLeft, setTimeLeft] = useState(15);
-    const [isValidating, setIsValidating] = useState(false); 
+  const [isValidating, setIsValidating] = useState(false);
   const [prevChainLength, setPrevChainLength] = useState(chain.length);
   const [status, setStatus] = useState("playing");
   const score = chain.reduce((acc, word) => acc + word.length, 0);
 
-  const lastLetter = chain.length > 0
-  ? chain[chain.length - 1].slice(-1).toUpperCase()
-  : "";
+  const lastLetter =
+    chain.length > 0 ? chain[chain.length - 1].slice(-1).toUpperCase() : "";
 
   const resetGame = () => {
     setChain([]);
@@ -29,7 +28,7 @@ export default function Game() {
     setTimeLeft(15);
     setPrevChainLength(0);
     setStatus("playing");
-    setIsValidating(false); 
+    setIsValidating(false);
   };
 
   if (chain.length !== prevChainLength) {
@@ -41,8 +40,8 @@ export default function Game() {
     const timer = setInterval(() => {
       setTimeLeft((prevTime) => {
         if (prevTime <= 1) {
-           if (isValidating) {
-            return 1; 
+          if (isValidating) {
+            return 1;
           }
           clearInterval(timer);
           setStatus("GameOver");

@@ -12,13 +12,19 @@ export default function Leaderboard({ entries }) {
               key={index}
               className={`${styles.entry} ${isFirst ? styles.entryFirst : ""}`}
             >
-              <span className={`${styles.rank} ${isFirst ? styles.rankFirst : ""}`}>
+              <span
+                className={`${styles.rank} ${isFirst ? styles.rankFirst : ""}`}
+              >
                 {index + 1}
               </span>
-              <span className={`${styles.name} ${isFirst ? styles.nameFirst : ""}`}>
+              <span
+                className={`${styles.name} ${isFirst ? styles.nameFirst : ""}`}
+              >
                 {entry.name}
               </span>
-              <span className={`${styles.score} ${isFirst ? styles.scoreFirst : ""}`}>
+              <span
+                className={`${styles.score} ${isFirst ? styles.scoreFirst : ""}`}
+              >
                 {entry.score} pts
               </span>
             </li>

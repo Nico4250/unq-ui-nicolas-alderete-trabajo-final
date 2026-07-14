@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
 
 :root {
-  --panel: #0C0A14;
-  --violet: #B026FF;
-  --cyan: #00FFF0;
-  --pink: #FF1493;
-  --amber: #FFD300;
-  --red: #FF073A;
+  --panel: #0c0a14;
+  --violet: #b026ff;
+  --cyan: #00fff0;
+  --pink: #ff1493;
+  --amber: #ffd300;
+  --red: #ff073a;
   --text-hi: #ffef0b;
   --text-dim: #eef124;
-  --font-pixel: 'Press Start 2P', monospace;
-  --font-crt: 'VT323', monospace;
+  --font-pixel: "Press Start 2P", monospace;
+  --font-crt: "VT323", monospace;
 }
 
 * {
@@ -23,12 +23,14 @@ body {
   padding: 0;
 }
 
-
-
 body {
   background:
-    radial-gradient(circle at 50% 0%, rgba(26, 15, 46, 0.85), rgba(8, 7, 13, 0.9) 70%),
-    url('../assets/background.png');
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(26, 15, 46, 0.85),
+      rgba(8, 7, 13, 0.9) 70%
+    ),
+    url("../assets/background.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -40,7 +42,7 @@ body {
 .panel {
   background: var(--panel);
   border: 20px solid transparent;
-  border-image: url('../assets/borders2.png') 34 fill;
+  border-image: url("../assets/borders2.png") 34 fill;
   border-image-repeat: stretch round;
   padding: 20px;
   margin-bottom: 16px;
@@ -56,7 +58,14 @@ body {
 
 .actionBtn {
   border: 3px solid #fff;
-  clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%, 0 8px);
+  clip-path: polygon(
+    8px 0,
+    calc(100% - 8px) 0,
+    100% 8px,
+    100% 100%,
+    0 100%,
+    0 8px
+  );
   cursor: pointer;
   background: var(--pink);
   color: #000;
@@ -84,22 +93,44 @@ body {
 }
 
 @keyframes tick {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 @keyframes chipIn {
-  0% { opacity: 0; transform: scale(0.7); }
-  100% { opacity: 1; transform: scale(1); }
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes pop {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.3); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
