@@ -1,5 +1,5 @@
 .eyebrow {
-  color: var(--green);
+  color: var(--cyan);
 }
 
 .list {
@@ -23,8 +23,8 @@
 
 .chipLatest {
   color: #000;
-  background: var(--green);
-  border-color: var(--green);
+  background: var(--text-dim);
+  border-color: var(--text-dim);
   font-weight: 600;
   animation: chipIn 0.2s ease;
 }

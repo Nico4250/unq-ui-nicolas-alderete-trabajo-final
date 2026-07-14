@@ -9,7 +9,7 @@ export default function WordInput({ input, onInputChange, onSubmit, lastLetter, 
           className={`${styles.input} ${error ? styles.inputInvalid : ""}`}
           value={input}
           onChange={(e) => onInputChange(e.target.value)}
-           placeholder={lastLetter ? `${lastLetter}...` : "ej: elefante"}
+           placeholder={lastLetter ? `${lastLetter}...` : "ej: interfaces"}
         />
         <button type="submit" className={`actionBtn ${styles.submitBtn}`}>
           Enviar

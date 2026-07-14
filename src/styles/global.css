@@ -39,15 +39,11 @@ body {
 
 .panel {
   background: var(--panel);
-  border: 4px solid var(--violet);
-  clip-path: polygon(
-    12px 0, calc(100% - 12px) 0, 100% 12px,
-    100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%,
-    0 calc(100% - 12px), 0 12px
-  );
+  border: 20px solid transparent;
+  border-image: url('../assets/borders2.png') 34 fill;
+  border-image-repeat: stretch round;
   padding: 20px;
   margin-bottom: 16px;
-  box-shadow: 0 0 12px rgba(176, 38, 255, 0.35);
 }
 
 .eyebrow {
